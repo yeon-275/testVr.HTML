@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-proxy-event-component/dist/aframe-proxy-event-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-proxy-event-component/dist/aframe-proxy-event-component.min.js"></script>
+  <script src="play-all-model-animations.js"></script>
+  </head>
+
+
+
+  <body>
+
+    <a-scene>
+
+      <a-sphere
+        color="red"
+        position="0 0 0"
+        id="1"
+
+
+      ></a-sphere>
+
+      <a-box
+        id="box1.1"
+        color="blue"
+        position="-3 0 -3"
+        proxy-event__click="event: click; to: a-camera; as:1.1" >
+
+      ></a-box>
+
+      <a-box
+        id="box1.1.1"
+        color="orange"
+        position="-6 0 -6"
+        proxy-event__click="event: click; to: a-camera; as:1.1.1"
+
+      ></a-box>
+
+      <a-box
+        id="box1.1.2"
+        color="orange"
+        position="-1 1 -6"
+        proxy-event__click="event: click; to: a-camera; as:1.1.2"
+
+      ></a-box>
+
+      <a-box
+        id="box1.2"
+        color="blue"
+        position="3 0 -3"
+        proxy-event__click="event: click; to: a-camera; as:1.2"
+
+
+
+      ></a-box>
+
+        <a-box
+          id="box1.2.1"
+          color="purple"
+          position="1 -1 -6"
+          proxy-event__click="event: click; to: a-camera; as:1.2.1"
+
+        ></a-box>
+
+        <a-box
+          id="box1.2.2"
+          color="purple"
+          position="6 -1 -6"
+          proxy-event__click="event: click; to: a-camera; as:1.2.2"
+
+        ></a-box>
+
+
+      <a-camera
+          position="0 0 3"
+          animation="property: position; to: -3 0 -1; startEvents:1.1;"
+          animation__2="property: position; to: 3 0 -1; startEvents:1.2;"
+          animation__3="property: position; to: -6 0 -4; startEvents:1.1.1;"
+          animation__4="property: position; to: -1 1 -4; startEvents:1.1.2;"
+          animation__5="property: position; to: 1 -1 -4; startEvents:1.2.1;"
+          animation__6="property: position; to: 6 -1 -4; startEvents:1.2.2;"
+          >
+
+          <a-entity id="mouseCursor" cursor="rayOrigin:mouse"></a-entity>
+
+      </a-camera>
+    </a-scene>
+
+  </body>
+</html>
